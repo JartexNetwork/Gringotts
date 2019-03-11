@@ -73,19 +73,24 @@ public class AccountHolderFactory {
                 return null;
             }
 
-            OfflinePlayer player;
-
+            UUID uuid = null;
             try {
-                UUID playerId = UUID.fromString(uuidOrName);
-                player = Bukkit.getOfflinePlayer(playerId);
-            } catch (IllegalArgumentException ignored) {
-                // don't use getOfflinePlayer(String) because that will do a blocking web request
-                // rather iterate this array, should be quick enough
-                for (OfflinePlayer p : Bukkit.getOfflinePlayers()) {
-                    if (uuidOrName.equals(p.getName())) return new PlayerAccountHolder(p);
-                }
+                uuid = UUID.fromString(uuidOrName);
+            } catch (IllegalArgumentException ignored) {}
 
-                return null;
+            OfflinePlayer player;
+            if (uuid == null) {
+                player = Bukkit.getPlayer(uuidOrName);
+            } else {
+                player = Bukkit.getPlayer(uuid);
+            }
+
+            if (player == null) {
+                if (uuid == null) {
+                    player = Bukkit.getOfflinePlayer(uuidOrName);
+                } else {
+                    player = Bukkit.getOfflinePlayer(uuid);
+                }
             }
 
             // if this player has ever played on the server, they are a legit account holder

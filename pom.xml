@@ -91,12 +91,14 @@
             <classifier>shaded</classifier>
             <scope>provided</scope>
         </dependency>
+
         <dependency>
             <groupId>org.apache.derby</groupId>
             <artifactId>derby</artifactId>
             <version>10.9.1.0</version>
             <scope>runtime</scope>
         </dependency>
+
         <dependency>
             <groupId>towny</groupId>
             <artifactId>towny</artifactId>
@@ -104,6 +106,7 @@
             <scope>provided</scope>
             <optional>true</optional>
         </dependency>
+
         <dependency>
             <groupId>org.bstats</groupId>
             <artifactId>bstats-bukkit</artifactId>
@@ -116,48 +119,56 @@
             <version>1.7</version>
             <scope>provided</scope>
         </dependency>
+
         <dependency>
             <groupId>com.massivecraft</groupId>
             <artifactId>mcore</artifactId>
             <version>2.12.0</version>
             <scope>provided</scope>
         </dependency>
+
         <dependency>
             <groupId>com.massivecraft</groupId>
             <artifactId>factions</artifactId>
             <version>2.12.0</version>
             <scope>provided</scope>
         </dependency>
+
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.10</version>
             <scope>test</scope>
         </dependency>
+
         <dependency>
             <groupId>org.avaje</groupId>
             <artifactId>ebean</artifactId>
             <version>2.8.1</version>
             <scope>compile</scope>
         </dependency>
+
         <dependency>
             <groupId>com.sk89q.worldguard</groupId>
             <artifactId>worldguard-legacy</artifactId>
             <version>7.0.0-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
+
         <dependency>
             <groupId>com.sk89q.worldguard</groupId>
             <artifactId>worldguard-core</artifactId>
             <version>7.0.0-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
+
         <dependency>
             <groupId>com.sk89q.worldedit</groupId>
             <artifactId>worldedit-bukkit</artifactId>
             <version>7.0.0-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
+
         <dependency>
             <groupId>org.gestern</groupId>
             <artifactId>bukkit-migration-tools</artifactId>
@@ -165,9 +176,11 @@
         </dependency>
     </dependencies>
 
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+
 
     <scm>
         <url>https://github.com/MinecraftWars/Gringotts</url>
@@ -178,6 +191,7 @@
         <system>GitHub</system>
         <url>https://github.com/MinecraftWars/Gringotts/issues</url>
     </issueManagement>
+
     <repositories>
         <repository>
             <id>CodeMC</id>
@@ -204,19 +218,21 @@
             </snapshots>
         </repository>
         <repository>
-            <id>vault-repo</id>
-            <url>http://nexus.hc.to/content/repositories/pub_releases</url>
-            <releases>
-                <enabled>true</enabled>
-            </releases>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
+            <id>aikar-1</id> <!-- mirror and vault replacement -->
+            <url>https://repo.aikar.co/nexus/content/repositories/ </url>
         </repository>
+
+        <repository>
+            <id>aikar-2</id> <!-- mirror and vault replacement -->
+            <url>https://repo.aikar.co/nexus/content/groups/aikar/</url>
+        </repository>
+
+
         <repository>
             <id>znode</id>
             <url>http://repo.zno.de/artifactory/repo/</url>
         </repository>
+
         <repository>
             <id>project.local</id>
             <name>project.local</name>
@@ -226,6 +242,7 @@
             </releases>
             <url>file://${project.basedir}/repo</url>
         </repository>
+
     </repositories>
 
     <distributionManagement>
@@ -234,10 +251,12 @@
             <name>znode-releases</name>
             <url>http://repo.zno.de/artifactory/libs-release-local</url>
         </repository>
+
         <snapshotRepository>
             <id>znode-snapshots</id>
             <name>znode-snapshots</name>
             <url>http://repo.zno.de/artifactory/libs-snapshot-local</url>
         </snapshotRepository>
     </distributionManagement>
+
 </project>
